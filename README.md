@@ -146,6 +146,6 @@ image_upscaler\
 
 ## 📜 ライセンス
 
-- 本ツール: 個人利用想定（ライセンス未設定）
+- 本ツール: [MIT License](LICENSE)（自由に利用・改変・再配布可）
 - Real-ESRGAN: BSD 3-Clause
 - waifu2x-ncnn-vulkan: MIT
