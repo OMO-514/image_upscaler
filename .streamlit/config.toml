@@ -6,7 +6,6 @@ gatherUsageStats = false
 address = "127.0.0.1"
 port = 8520
 headless = true
-enableCORS = false
 enableXsrfProtection = true
 fileWatcherType = "none"
 maxUploadSize = 200

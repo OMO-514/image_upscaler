@@ -17,7 +17,33 @@
 - AMD Radeon / NVIDIA / Intel GPU いずれも対応（Vulkan経由でGPU加速）
 - GPUなし CPU でも動作可（やや遅い）
 
-## 🚀 初回セットアップ
+## 🚀 かんたんスタート（おすすめ・2ステップ）
+
+### 1. ダウンロード
+
+このページ上部の緑の **「Code」→「Download ZIP」** をクリックして、解凍します。
+（Gitを使う方は `git clone https://github.com/OMO-514/image_upscaler.git`）
+
+### 2. `start.bat` をダブルクリック
+
+解凍したフォルダの中の **`start.bat`** をダブルクリックするだけ。
+
+- 初回は必要な準備（パッケージ導入＋AIエンジンの自動DL）を行います（数分かかります）
+- 2回目以降は、ダブルクリックですぐ起動します
+- 起動すると、ブラウザで http://127.0.0.1:8520 が自動で開きます
+- 終了するときは、出てきた黒いウィンドウを閉じるだけ
+
+> 💡 **Python だけ事前に必要です。** 入っていない場合は `start.bat` が案内を出します。
+> [python.org](https://www.python.org/downloads/) からインストールする際、最初の画面で **「Add python.exe to PATH」にチェック**を入れてください。
+
+> 🔒 通信先は GitHub（初回のエンジンDLのみ）。**画像など個人データは一切送信されません。**
+
+---
+
+## 🛠 手動セットアップ（`start.bat` が使えないとき・上級者向け）
+
+<details>
+<summary>クリックして展開</summary>
 
 ### 1. リポジトリの取得
 
@@ -88,29 +114,30 @@ GitHubの公式リリースから手動ダウンロードして `bin/` に配置
 
 > 💡 どちらか一方だけでも動作します（未配置のエンジンはGUIから自動的に除外されます）
 
+</details>
+
 ## ▶️ 起動
 
-```powershell
-cd image_upscaler
-.\run.bat
-```
+通常は **`start.bat` をダブルクリック**するだけです（→「かんたんスタート」参照）。
 
-または直接:
+コマンドから起動したい場合:
 
 ```powershell
 py -m streamlit run app.py
 ```
 
-ブラウザで http://127.0.0.1:8520 が自動で開きます。
+どちらの場合も、ブラウザで http://127.0.0.1:8520 が自動で開きます。
 
 ## 📂 ディレクトリ構造
 
 ```
 image_upscaler\
+├── start.bat           # ★これをダブルクリックで起動（準備も自動）
 ├── app.py              # Streamlit GUI
 ├── upscaler.py         # エンジン呼び出しラッパ
 ├── requirements.txt
-├── run.bat             # 起動スクリプト
+├── setup.ps1           # AIエンジン自動DL（start.batが内部で使用）
+├── run.bat             # 旧・起動スクリプト（start.bat推奨）
 ├── .streamlit\
 │   └── config.toml     # localhost束縛・テレメトリOFF
 ├── bin\                # ← ここにエンジンバイナリを配置
