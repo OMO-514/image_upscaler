@@ -1,0 +1,18 @@
+# プライバシー優先設定: 外部通信を一切しないローカル運用
+[browser]
+gatherUsageStats = false
+
+[server]
+address = "127.0.0.1"
+port = 8520
+headless = true
+enableCORS = false
+enableXsrfProtection = true
+fileWatcherType = "none"
+maxUploadSize = 200
+
+[global]
+showWarningOnDirectExecution = false
+
+[theme]
+base = "dark"

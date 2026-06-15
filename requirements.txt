@@ -1,0 +1,3 @@
+streamlit>=1.36.0
+Pillow>=10.3.0
+streamlit-image-comparison>=0.0.4
